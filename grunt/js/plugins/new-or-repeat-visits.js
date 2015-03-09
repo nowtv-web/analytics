@@ -12,7 +12,7 @@ _analytics.plugins.newOrRepeatVisits = (function(omniture, config){
         var s=this,e=new Date(),cval,sval,ct=e.getTime();
         d=d?d:30;cn=cn?cn:'s_nr';
         e.setTime(ct+d*24*60*60*1000);cval=s.c_r(cn);
-        if(cval.length==0){
+        if(!cval || cval.length==0){
             s.c_w(cn,ct+'-New',e);
             return'New';
         }
