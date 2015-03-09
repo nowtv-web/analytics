@@ -1,6 +1,9 @@
 # Change Log
 
-## 1.4.5
+## 1.4.8
+ * [fixed] getNewRepeat is not null safe 46
+
+## 1.4.6
 
  * [fixed] searchTerm and searhType had wrong mapping configuration with Adobe Analytics and are now fixed
 

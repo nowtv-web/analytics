@@ -8,3 +8,4 @@ cat
 result.txt
 *.ipr
 *.iws
+_site/test/reports/**/*
