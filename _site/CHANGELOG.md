@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.4.9
+ * [added] Support for checking for new Now TV signup cookie to use as visitor ID
+
 ## 1.4.8
  * [fixed] getNewRepeat is not null safe 46
 

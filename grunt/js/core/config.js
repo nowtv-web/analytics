@@ -1,4 +1,23 @@
 if (typeof _analytics==='undefined') _analytics={};
+
+function getVisitorId() {
+
+    var cookieName = 'marlin-tracking=';
+    var cookieArray = document.cookie.split(';');
+
+    for (var i = 0; i < cookieArray.length; i++) {
+        var cookie = cookieArray[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1, cookie.length);
+        }
+        if (cookie.indexOf(cookieName) === 0) {
+            return cookie.substring(cookieName.length, cookie.length);
+        }
+    }
+
+    return '';
+}
+
 _analytics.config = (function(){
 
     var linkDetailsMap = [
@@ -130,7 +149,8 @@ _analytics.config = (function(){
         url: window.location.href.toString().split('?')[0],
         useForcedLinkTracking: true,
         variableBasedEvents: variableBasedEvents,
-        visitorNamespace: 'bskyb'
+        visitorNamespace: 'bskyb',
+        visitorID: getVisitorId()
     };
 
 }());
